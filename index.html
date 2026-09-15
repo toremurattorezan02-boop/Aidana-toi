@@ -1,0 +1,1773 @@
+<!DOCTYPE html>
+<html lang="kk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Айдана — Қыз ұзату</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: #ffffff;
+            color: #914957;
+            font-family: Arial, sans-serif;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            text-align: center;
+            padding: 0 20px 70px;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    rgba(255,255,255,0) 45%,
+                    rgba(255,255,255,0.80) 78%,
+                    rgba(255,255,255,1) 100%
+                ),
+                url("Замира_.jpg");
+
+            background-size: cover;
+            background-position: center top;
+        }
+
+        .content {
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .name {
+            margin: 0;
+            font-family: Georgia, serif;
+            font-size: 80px;
+            font-style: italic;
+            font-weight: normal;
+            color: #a76776;
+            animation: fadeIn 1.5s ease;
+        }
+
+        .subtitle {
+            margin-top: 25px;
+            margin-bottom: 30px;
+            font-family: Georgia, serif;
+            font-size: 28px;
+            letter-spacing: 4px;
+            color: #a76776;
+            animation: fadeIn 2s ease;
+        }
+
+        /* =========================
+           MUSIC BUTTON
+        ========================= */
+
+        .music-button {
+            display: inline-block;
+            padding: 14px 45px;
+            background: #914957;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 15px;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(145,73,87,0.25);
+            animation: buttonPulse 2s infinite;
+            cursor: pointer;
+            border: none;
+            font-family: Arial, sans-serif;
+        }
+
+        .music-button:hover {
+            background: #733744;
+            transform: scale(1.05);
+        }
+
+        /* =========================
+           ARROW
+        ========================= */
+
+        .arrow {
+            width: 30px;
+            height: 30px;
+            margin: 18px auto 0;
+            position: relative;
+            animation: arrowMove 1.5s infinite;
+        }
+
+        .arrow::before,
+        .arrow::after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 5px;
+            background: #914957;
+            border-radius: 5px;
+            top: 10px;
+        }
+
+        .arrow::before {
+            left: 0;
+            transform: rotate(45deg);
+        }
+
+        .arrow::after {
+            right: 0;
+            transform: rotate(-45deg);
+        }
+
+        /* =========================
+           INVITATION
+        ========================= */
+
+        .invitation {
+            min-height: 430px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 70px 25px;
+            text-align: center;
+            position: relative;
+
+            background-image:
+                linear-gradient(
+                    rgba(255,255,255,0.15),
+                    rgba(255,255,255,0.15)
+                ),
+                url("Замира_.jpg");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .invitation-text {
+            max-width: 500px;
+            font-family: Georgia, serif;
+            font-size: 25px;
+            line-height: 1.6;
+            font-style: italic;
+            color: #a06470;
+            text-shadow: 0 1px 2px rgba(255,255,255,0.8);
+            animation: fadeUp 1.5s ease;
+        }
+
+        /* =========================
+           GUESTS
+        ========================= */
+
+        .guests-section {
+            padding: 70px 20px 80px;
+            text-align: center;
+            background: #fffafa;
+        }
+
+        .respect-title {
+            font-family: Georgia, serif;
+            font-size: 38px;
+            font-style: italic;
+            font-weight: normal;
+            color: #914957;
+            margin-bottom: 25px;
+        }
+
+        .guests {
+            max-width: 600px;
+            margin: auto;
+            font-family: Georgia, serif;
+            font-size: 16px;
+            line-height: 1.8;
+            letter-spacing: 1px;
+            color: #914957;
+        }
+
+        /* =========================
+           INVITATION CARD
+        ========================= */
+
+        .invitation-card {
+            max-width: 500px;
+            margin: 45px auto 0;
+            padding: 45px 25px;
+
+            background: #914957;
+            color: white;
+
+            border-radius: 35px 35px 35px 8px;
+            box-shadow: 0 15px 35px rgba(145,73,87,0.25);
+        }
+
+        .card-text {
+            font-family: Georgia, serif;
+            font-size: 17px;
+            line-height: 1.8;
+            letter-spacing: 1px;
+        }
+
+        .daughter-name {
+            margin: 20px 0;
+            font-family: Georgia, serif;
+            font-size: 42px;
+            font-style: italic;
+            font-weight: normal;
+            color: white;
+        }
+
+        /* =========================
+           DATE
+        ========================= */
+
+        .date-section {
+            padding: 70px 20px 100px;
+            text-align: center;
+            background: #ffffff;
+            color: #914957;
+        }
+
+        .date-section h2 {
+            font-family: Georgia, serif;
+            font-size: 38px;
+            font-weight: normal;
+            margin: 0 0 35px;
+            color: #914957;
+        }
+
+        .calendar {
+            width: 100%;
+            max-width: 370px;
+            margin: auto;
+            padding: 28px 22px;
+
+            border-radius: 25px;
+            background: #fffafa;
+
+            box-shadow: 0 10px 35px rgba(120,60,70,0.14);
+            border: 1px solid rgba(145,73,87,0.08);
+        }
+
+        .calendar-header {
+            font-family: Georgia, serif;
+            font-size: 27px;
+            letter-spacing: 5px;
+            margin-bottom: 25px;
+            color: #914957;
+        }
+
+        .weekdays,
+        .days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 8px;
+        }
+
+        .weekdays {
+            margin-bottom: 12px;
+        }
+
+        .weekdays span {
+            font-size: 12px;
+            font-weight: bold;
+            color: #b47a85;
+        }
+
+        .days span {
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 14px;
+            color: #555;
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+
+        .days .selected {
+            background: #914957;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 6px 15px rgba(145,73,87,0.35);
+            transform: scale(1.12);
+        }
+
+        .event-time {
+            margin-top: 40px;
+        }
+
+        .time-title {
+            font-size: 15px;
+            color: #a06470;
+            margin-bottom: 8px;
+        }
+
+        .time {
+            font-family: Georgia, serif;
+            font-size: 42px;
+            color: #914957;
+            letter-spacing: 2px;
+        }
+
+        .event-date {
+            margin-top: 8px;
+            font-family: Georgia, serif;
+            font-size: 23px;
+            color: #a06470;
+        }
+
+        /* =========================
+           LOCATION
+        ========================= */
+
+        .location-section {
+            padding: 75px 20px 90px;
+            text-align: center;
+            background: #fffafa;
+        }
+
+        .location-title {
+            font-family: Georgia, serif;
+            font-size: 38px;
+            font-style: italic;
+            font-weight: normal;
+            color: #914957;
+            margin-bottom: 25px;
+        }
+
+        .location-name {
+            font-family: Georgia, serif;
+            font-size: 30px;
+            color: #914957;
+            margin-bottom: 12px;
+        }
+
+        .location-address {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #777;
+            margin-bottom: 30px;
+        }
+
+        .map-button {
+            display: inline-block;
+            padding: 15px 38px;
+            background: #914957;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 16px;
+
+            box-shadow: 0 6px 18px rgba(145,73,87,0.25);
+            transition: 0.3s;
+        }
+
+        .map-button:hover {
+            background: #733744;
+            transform: scale(1.04);
+        }
+
+        /* =========================
+           COUNTDOWN
+        ========================= */
+
+        .countdown-section {
+            padding: 55px 20px 45px;
+            text-align: center;
+            background: #ffffff;
+        }
+
+        .countdown-title {
+            font-family: Georgia, serif;
+            font-size: 22px;
+            font-style: italic;
+            color: #914957;
+            margin-bottom: 25px;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .countdown-item {
+            min-width: 70px;
+        }
+
+        .countdown-number {
+            font-family: Georgia, serif;
+            font-size: 32px;
+            color: #914957;
+            line-height: 1;
+        }
+
+        .countdown-label {
+            margin-top: 8px;
+            font-size: 12px;
+            color: #a76776;
+            letter-spacing: 1px;
+        }
+
+        /* =========================
+           HOSTS
+        ========================= */
+
+        .hosts-bottom {
+            padding: 45px 20px 65px;
+            text-align: center;
+            background: #ffffff;
+        }
+
+        .hosts-bottom-text {
+            font-family: Georgia, serif;
+            font-size: 20px;
+            font-style: italic;
+            color: #914957;
+            line-height: 1.8;
+            letter-spacing: 0.5px;
+        }
+
+        .hosts-bottom-names {
+            margin-top: 8px;
+            font-family: Georgia, serif;
+            font-size: 30px;
+            font-style: italic;
+            color: #a76776;
+            font-weight: normal;
+        }
+
+        /* =========================
+           RSVP
+        ========================= */
+
+        .rsvp-section {
+            padding: 75px 20px 90px;
+            background: #ffffff;
+            text-align: center;
+        }
+
+        .rsvp-title {
+            font-family: Georgia, serif;
+            font-size: 36px;
+            font-weight: normal;
+            color: #914957;
+            margin-bottom: 12px;
+        }
+
+        .rsvp-subtitle {
+            max-width: 500px;
+            margin: 0 auto 35px;
+            color: #777;
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        .rsvp-form {
+            max-width: 500px;
+            margin: auto;
+            text-align: left;
+        }
+
+        .input-title {
+            display: block;
+            margin-bottom: 10px;
+            font-family: Georgia, serif;
+            font-size: 18px;
+            color: #914957;
+        }
+
+        .name-input {
+            width: 100%;
+            padding: 16px 18px;
+            border: 1px solid #d9b9c0;
+            border-radius: 15px;
+            outline: none;
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        .name-input:focus {
+            border-color: #914957;
+            box-shadow: 0 0 0 3px rgba(145,73,87,0.08);
+        }
+
+        .radio-group {
+            margin-bottom: 30px;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 0;
+            color: #666;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .radio-option input {
+            width: 19px;
+            height: 19px;
+            accent-color: #914957;
+        }
+
+        .send-button {
+            width: 100%;
+            border: none;
+            padding: 17px;
+            border-radius: 30px;
+            background: #914957;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+
+            box-shadow: 0 7px 20px rgba(145,73,87,0.25);
+            transition: 0.3s;
+        }
+
+        .send-button:hover {
+            background: #733744;
+            transform: translateY(-2px);
+        }
+
+        /* =========================
+           DETAILS
+        ========================= */
+
+        .details {
+            padding: 70px 25px 100px;
+            text-align: center;
+            background: #fffafa;
+        }
+
+        .details h2 {
+            font-family: Georgia, serif;
+            font-size: 36px;
+            font-weight: normal;
+            color: #914957;
+            margin-bottom: 20px;
+        }
+
+        .details p {
+            max-width: 500px;
+            margin: 12px auto;
+            line-height: 1.8;
+            color: #666;
+            font-size: 15px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        .footer {
+            background: #914957;
+            color: white;
+            text-align: center;
+            padding: 55px 20px;
+        }
+
+        .instagram {
+            width: 45px;
+            height: 45px;
+            margin: 0 auto 25px;
+            border-radius: 50%;
+            background: white;
+            color: #914957;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 23px;
+            text-decoration: none;
+        }
+
+        .footer-text {
+            font-family: Georgia, serif;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .top-link {
+            color: white;
+            text-decoration: none;
+            font-family: Georgia, serif;
+            font-size: 15px;
+        }
+
+        /* =========================
+           SCROLL HINT
+        ========================= */
+
+        .scroll-hint {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            font-size: 13px;
+            color: #914957;
+            background: rgba(255,255,255,0.9);
+
+            padding: 8px 18px;
+            border-radius: 20px;
+
+            box-shadow: 0 4px 12px rgba(145,73,87,0.15);
+
+            z-index: 100;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+
+            pointer-events: none;
+            font-family: Georgia, serif;
+        }
+
+        .scroll-hint.show {
+            opacity: 1;
+        }
+
+        /* =========================
+           ANIMATIONS
+        ========================= */
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes arrowMove {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(8px);
+            }
+        }
+
+        @keyframes buttonPulse {
+            0% {
+                box-shadow: 0 5px 15px rgba(145,73,87,0.20);
+            }
+
+            50% {
+                box-shadow: 0 5px 25px rgba(145,73,87,0.40);
+            }
+
+            100% {
+                box-shadow: 0 5px 15px rgba(145,73,87,0.20);
+            }
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            .hero {
+                min-height: 100vh;
+                padding-bottom: 65px;
+                background-position: center top;
+            }
+
+            .name {
+                font-size: 70px;
+            }
+
+            .subtitle {
+                font-size: 23px;
+                letter-spacing: 3px;
+            }
+
+            .music-button {
+                padding: 13px 40px;
+                font-size: 14px;
+            }
+
+            .invitation {
+                min-height: 430px;
+            }
+
+            .invitation-text {
+                font-size: 22px;
+                line-height: 1.55;
+            }
+
+            .respect-title {
+                font-size: 34px;
+            }
+
+            .guests {
+                font-size: 14px;
+                line-height: 1.9;
+            }
+
+            .invitation-card {
+                padding: 40px 20px;
+            }
+
+            .card-text {
+                font-size: 15px;
+                line-height: 1.8;
+            }
+
+            .daughter-name {
+                font-size: 36px;
+            }
+
+            .date-section {
+                padding-top: 55px;
+            }
+
+            .date-section h2 {
+                font-size: 34px;
+            }
+
+            .calendar {
+                max-width: 350px;
+                padding: 25px 18px;
+            }
+
+            .days span {
+                height: 38px;
+                font-size: 13px;
+            }
+
+            .time {
+                font-size: 38px;
+            }
+
+            .location-title {
+                font-size: 34px;
+            }
+
+            .location-name {
+                font-size: 27px;
+            }
+
+            .rsvp-title {
+                font-size: 32px;
+            }
+
+            .countdown {
+                gap: 8px;
+            }
+
+            .countdown-item {
+                min-width: 65px;
+            }
+
+            .countdown-number {
+                font-size: 28px;
+            }
+
+            .countdown-label {
+                font-size: 11px;
+            }
+
+            .hosts-bottom-text {
+                font-size: 19px;
+            }
+
+            .hosts-bottom-names {
+                font-size: 28px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- =========================
+         МУЗЫКА
+    ========================= -->
+
+    <audio id="weddingMusic" loop preload="auto">
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+
+    <!-- =========================
+         SCROLL HINT
+    ========================= -->
+
+    <div class="scroll-hint" id="scrollHint">
+        ↓ Төмен қарай жылжыңыз
+    </div>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="hero" id="top">
+
+        <div class="content">
+
+            <h1 class="name">
+                Айдана
+            </h1>
+
+            <div class="subtitle">
+                ҚЫЗ ҰЗАТУ
+            </div>
+
+            <button class="music-button" id="musicButton">
+                🎵 ӘУЕНДІ ҚОСУ
+            </button>
+
+            <div class="arrow"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ӨЛЕҢ
+    ========================= -->
+
+    <section id="invitation" class="invitation">
+
+        <div class="invitation-text">
+
+            Қызым, асыл гүлім,<br>
+            арайлым,<br>
+            Шаңырақтың кіргізіп төр<br>
+            құраймын.<br>
+            Сол күнімнің тойы жетіп<br>
+            бір қалды,<br>
+            Ақ бата мен ұзатайық ағайын!
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ҚОНАҚТАР
+    ========================= -->
+
+    <section class="guests-section">
+
+        <div class="respect-title">
+            Құрметті
+        </div>
+
+        <div class="guests">
+
+            АҒАЙЫН-ТУЫС, БАУЫРЛАР,<br>
+            ҚҰДА-ЖЕКЖАТ,<br>
+            НАҒАШЫ-ЖИЕН, БӨЛЕЛЕР,<br>
+            ҚҰРБЫ-ҚҰРДАС,<br>
+            ДОС-ЖАРАНДАР,<br>
+            ӘРІПТЕСТЕР, КӨРШІЛЕР!
+
+        </div>
+
+
+        <!-- ШАҚЫРУ КАРТОЧКАСЫ -->
+
+        <div class="invitation-card">
+
+            <div class="card-text">
+
+                СІЗДЕРДІ<br>
+                АЯУЛЫ ҚЫЗЫМЫЗ
+
+            </div>
+
+
+            <div class="daughter-name">
+                Айдананың
+            </div>
+
+
+            <div class="card-text">
+
+                ҰЗАТУ ТОЙЫНА АРНАЛҒАН<br>
+                САЛТАНАТТЫ АҚ<br>
+                ДАСТАРХАНЫМЫЗДЫҢ<br>
+                ҚАДІРЛІ ҚОНАҒЫ БОЛУҒА<br>
+                ШАҚЫРАМЫЗ!
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         КҮНІ
+    ========================= -->
+
+    <section class="date-section">
+
+        <h2>
+            Той күні
+        </h2>
+
+
+        <div class="calendar">
+
+            <div class="calendar-header">
+                ҚАЗАН
+            </div>
+
+
+            <div class="weekdays">
+
+                <span>Дс</span>
+                <span>Сс</span>
+                <span>Ср</span>
+                <span>Бс</span>
+                <span>Жм</span>
+                <span>Сб</span>
+                <span>Жс</span>
+
+            </div>
+
+
+            <div class="days">
+
+                <span></span>
+                <span></span>
+
+                <span>1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+                <span>5</span>
+
+                <span>6</span>
+                <span>7</span>
+                <span>8</span>
+                <span>9</span>
+                <span>10</span>
+                <span>11</span>
+                <span>12</span>
+
+                <span>13</span>
+                <span>14</span>
+                <span>15</span>
+                <span>16</span>
+                <span>17</span>
+                <span>18</span>
+                <span>19</span>
+
+                <span>20</span>
+                <span>21</span>
+                <span>22</span>
+                <span>23</span>
+                <span>24</span>
+                <span>25</span>
+                <span>26</span>
+
+                <span>27</span>
+                <span class="selected">28</span>
+                <span>29</span>
+                <span>30</span>
+                <span>31</span>
+
+            </div>
+
+        </div>
+
+
+        <div class="event-time">
+
+            <div class="time-title">
+                🕰️ Басталу уақыты
+            </div>
+
+            <div class="time">
+                19:00
+            </div>
+
+            <div class="event-date">
+                28 қазан
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         МЕКЕНЖАЙ
+    ========================= -->
+
+    <section class="location-section">
+
+        <div class="location-title">
+            Тойдың мекенжайы
+        </div>
+
+        <div class="location-name">
+            Хан Сарай
+        </div>
+
+        <div class="location-address">
+
+            Тараз қаласы,<br>
+            Қаратай Тұрысов көшесі, 13
+
+        </div>
+
+
+        <a
+            href="https://2gis.kz/taraz/search/%D0%A5%D0%B0%D0%BD%20%D0%A1%D0%B0%D1%80%D0%B0%D0%B9%2C%20%D2%9A%D0%B0%D1%80%D0%B0%D1%82%D0%B0%D0%B9%20%D0%A2%D2%B1%D1%80%D1%8B%D1%81%D0%BE%D0%B2%20%D0%BA%D3%A9%D1%88%D0%B5%D1%81%D1%96%2013"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="map-button"
+        >
+            📍 2GIS арқылы ашу
+        </a>
+
+    </section>
+
+
+    <!-- =========================
+         ТАЙМЕР
+    ========================= -->
+
+    <section class="countdown-section">
+
+        <div class="countdown-title">
+            Тойымызға дейін:
+        </div>
+
+
+        <div class="countdown">
+
+            <div class="countdown-item">
+
+                <div class="countdown-number" id="days">
+                    00
+                </div>
+
+                <div class="countdown-label">
+                    КҮН
+                </div>
+
+            </div>
+
+
+            <div class="countdown-item">
+
+                <div class="countdown-number" id="hours">
+                    00
+                </div>
+
+                <div class="countdown-label">
+                    САҒАТ
+                </div>
+
+            </div>
+
+
+            <div class="countdown-item">
+
+                <div class="countdown-number" id="minutes">
+                    00
+                </div>
+
+                <div class="countdown-label">
+                    МИНУТ
+                </div>
+
+            </div>
+
+
+            <div class="countdown-item">
+
+                <div class="countdown-number" id="seconds">
+                    00
+                </div>
+
+                <div class="countdown-label">
+                    СЕКУНД
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ТОЙ ИЕЛЕРІ
+    ========================= -->
+
+    <section class="hosts-bottom">
+
+        <div class="hosts-bottom-text">
+
+            Құрметпен,<br>
+            той иелері :
+
+        </div>
+
+
+        <div class="hosts-bottom-names">
+
+            Арман мен Айнұр
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         RSVP
+    ========================= -->
+
+    <section class="rsvp-section">
+
+        <div class="rsvp-title">
+            Сауалнама
+        </div>
+
+
+        <div class="rsvp-subtitle">
+
+            Төмендегі форманы толтырып,
+            тойға қатысуыңызды растауыңызды сұраймыз.
+
+        </div>
+
+
+        <form
+            class="rsvp-form"
+            onsubmit="sendToWhatsApp(event)"
+        >
+
+            <label class="input-title">
+                Аты-жөніңіз:
+            </label>
+
+
+            <input
+                type="text"
+                id="guestName"
+                class="name-input"
+                placeholder="Аты-жөніңізді жазыңыз"
+                required
+            >
+
+
+            <label class="input-title">
+                Тойға келесіз бе?
+            </label>
+
+
+            <div class="radio-group">
+
+                <label class="radio-option">
+
+                    <input
+                        type="radio"
+                        name="attendance"
+                        value="Иә, әрине келеміз"
+                        required
+                    >
+
+                    <span>
+                        Иә, әрине келеміз
+                    </span>
+
+                </label>
+
+
+                <label class="radio-option">
+
+                    <input
+                        type="radio"
+                        name="attendance"
+                        value="Жұбайыммен келемін"
+                    >
+
+                    <span>
+                        Жұбайыммен келемін
+                    </span>
+
+                </label>
+
+
+                <label class="radio-option">
+
+                    <input
+                        type="radio"
+                        name="attendance"
+                        value="Өкінішке орай, келе алмаймын"
+                    >
+
+                    <span>
+                        Өкінішке орай, келе алмаймын
+                    </span>
+
+                </label>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="send-button"
+            >
+                ЖІБЕРУ
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- =========================
+         ҚОСЫМША МӘТІН
+    ========================= -->
+
+    <section class="details">
+
+        <h2>
+            Құрметті қонақтар!
+        </h2>
+
+
+        <p>
+
+            Сіздерді Айдананың
+            қыз ұзату тойына арналған
+            ақ дастарханымыздың
+            қадірлі қонағы болуға
+            шақырамыз.
+
+        </p>
+
+
+        <p>
+
+            Келіп, қуанышымызды
+            бірге бөлісуге шақырамыз!
+
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer class="footer">
+
+        <a href="#" class="instagram">
+            ◎
+        </a>
+
+
+        <div class="footer-text">
+        </div>
+
+
+        <a
+            href="#top"
+            class="top-link"
+        >
+            ЖОҒАРЫҒА КӨТЕРУ ↑
+        </a>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+        /* ============================================
+           🎵 МУЗЫКА
+        ============================================ */
+
+        const music =
+            document.getElementById("weddingMusic");
+
+        const musicButton =
+            document.getElementById("musicButton");
+
+
+        function playMusic() {
+
+            if (music.paused) {
+
+                music.play()
+                    .then(function () {
+
+                        musicButton.innerHTML =
+                            "⏸ ӘУЕНДІ ТОҚТАТУ";
+
+                    })
+                    .catch(function () {});
+
+            }
+
+        }
+
+
+        window.addEventListener(
+            "load",
+            function () {
+
+                playMusic();
+
+            }
+        );
+
+
+        [
+            "click",
+            "touchstart",
+            "keydown",
+            "scroll",
+            "mousemove"
+        ].forEach(function (evt) {
+
+            document.addEventListener(
+                evt,
+                function once() {
+
+                    playMusic();
+
+                    document.removeEventListener(
+                        evt,
+                        once
+                    );
+
+                },
+                {
+                    once: true,
+                    passive: true
+                }
+            );
+
+        });
+
+
+        musicButton.addEventListener(
+            "click",
+            function (event) {
+
+                event.preventDefault();
+                event.stopPropagation();
+
+
+                if (music.paused) {
+
+                    playMusic();
+
+                } else {
+
+                    music.pause();
+
+                    musicButton.innerHTML =
+                        "🎵 ӘУЕНДІ ҚОСУ";
+
+                }
+
+            }
+        );
+
+
+        /* ============================================
+           ⏳ ТАЙМЕР
+           28 ҚАЗАН 2026 — 19:00
+        ============================================ */
+
+        const weddingDate =
+            new Date(
+                "2026-10-28T19:00:00+05:00"
+            ).getTime();
+
+
+        function updateCountdown() {
+
+            const now =
+                new Date().getTime();
+
+            const distance =
+                weddingDate - now;
+
+
+            if (distance <= 0) {
+
+                document.getElementById("days")
+                    .innerHTML = "00";
+
+                document.getElementById("hours")
+                    .innerHTML = "00";
+
+                document.getElementById("minutes")
+                    .innerHTML = "00";
+
+                document.getElementById("seconds")
+                    .innerHTML = "00";
+
+                return;
+
+            }
+
+
+            const days =
+                Math.floor(
+                    distance /
+                    (1000 * 60 * 60 * 24)
+                );
+
+
+            const hours =
+                Math.floor(
+                    (
+                        distance %
+                        (1000 * 60 * 60 * 24)
+                    ) /
+                    (1000 * 60 * 60)
+                );
+
+
+            const minutes =
+                Math.floor(
+                    (
+                        distance %
+                        (1000 * 60 * 60)
+                    ) /
+                    (1000 * 60)
+                );
+
+
+            const seconds =
+                Math.floor(
+                    (
+                        distance %
+                        (1000 * 60)
+                    ) /
+                    1000
+                );
+
+
+            document.getElementById("days")
+                .innerHTML =
+                String(days).padStart(2, "0");
+
+
+            document.getElementById("hours")
+                .innerHTML =
+                String(hours).padStart(2, "0");
+
+
+            document.getElementById("minutes")
+                .innerHTML =
+                String(minutes).padStart(2, "0");
+
+
+            document.getElementById("seconds")
+                .innerHTML =
+                String(seconds).padStart(2, "0");
+
+        }
+
+
+        updateCountdown();
+
+        setInterval(
+            updateCountdown,
+            1000
+        );
+
+
+        /* ============================================
+           ↓ АВТОМАТТЫ ТҮРДЕ ТӨМЕН ЖЫЛЖУ
+        ============================================ */
+
+        (function () {
+
+            let autoScrollActive = true;
+
+            let userInteracted = false;
+
+            const scrollHint =
+                document.getElementById(
+                    "scrollHint"
+                );
+
+
+            function stopAutoScroll() {
+
+                if (!userInteracted) {
+
+                    userInteracted = true;
+
+                    autoScrollActive = false;
+
+                    if (scrollHint) {
+
+                        scrollHint.classList.remove(
+                            "show"
+                        );
+
+                    }
+
+                }
+
+            }
+
+
+            [
+                "wheel",
+                "keydown",
+                "mousedown"
+            ].forEach(function (evt) {
+
+                window.addEventListener(
+                    evt,
+                    stopAutoScroll,
+                    {
+                        passive: true
+                    }
+                );
+
+            });
+
+
+            let touchStartY = 0;
+
+
+            window.addEventListener(
+                "touchstart",
+                function (e) {
+
+                    touchStartY =
+                        e.touches[0].clientY;
+
+                },
+                {
+                    passive: true
+                }
+            );
+
+
+            window.addEventListener(
+                "touchmove",
+                function (e) {
+
+                    const touchY =
+                        e.touches[0].clientY;
+
+
+                    if (
+                        Math.abs(
+                            touchY -
+                            touchStartY
+                        ) > 10
+                    ) {
+
+                        stopAutoScroll();
+
+                    }
+
+                },
+                {
+                    passive: true
+                }
+            );
+
+
+            function smoothAutoScroll() {
+
+                if (!autoScrollActive) {
+                    return;
+                }
+
+
+                const totalHeight =
+                    document.body.scrollHeight -
+                    window.innerHeight;
+
+
+                const currentY =
+                    window.scrollY;
+
+
+                if (
+                    currentY >=
+                    totalHeight - 5
+                ) {
+
+                    autoScrollActive = false;
+
+                    if (scrollHint) {
+
+                        scrollHint.classList.remove(
+                            "show"
+                        );
+
+                    }
+
+                    return;
+
+                }
+
+
+                window.scrollBy(
+                    0,
+                    0.5
+                );
+
+
+                requestAnimationFrame(
+                    smoothAutoScroll
+                );
+
+            }
+
+
+            window.addEventListener(
+                "load",
+                function () {
+
+                    setTimeout(
+                        function () {
+
+                            if (!userInteracted) {
+
+                                if (scrollHint) {
+
+                                    scrollHint.classList.add(
+                                        "show"
+                                    );
+
+                                }
+
+                                smoothAutoScroll();
+
+                            }
+
+                        },
+                        2000
+                    );
+
+                }
+            );
+
+        })();
+
+
+        /* ============================================
+           📱 WHATSAPP
+        ============================================ */
+
+        function sendToWhatsApp(event) {
+
+            event.preventDefault();
+
+
+            const phoneNumber =
+                "77086203341";
+
+
+            const guestName =
+                document.getElementById(
+                    "guestName"
+                ).value;
+
+
+            const attendance =
+                document.querySelector(
+                    'input[name="attendance"]:checked'
+                ).value;
+
+
+            const message =
+
+                "Сәлеметсіз бе! 🌸%0A%0A" +
+
+                "Айдананың қыз ұзату тойына шақыру бойынша жауап:%0A%0A" +
+
+                "Аты-жөні: " +
+                encodeURIComponent(
+                    guestName
+                ) +
+                "%0A" +
+
+                "Жауабы: " +
+                encodeURIComponent(
+                    attendance
+                ) +
+                "%0A%0A" +
+
+                "28 қазан, сағат 19:00%0A" +
+
+                "Хан Сарай, Тараз қаласы";
+
+
+            const whatsappURL =
+                "https://wa.me/" +
+                phoneNumber +
+                "?text=" +
+                message;
+
+
+            window.open(
+                whatsappURL,
+                "_blank"
+            );
+
+        }
+
+    </script>
+
+</body>
+
+</html>
